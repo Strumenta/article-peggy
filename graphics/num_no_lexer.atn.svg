@@ -1,0 +1,42 @@
+<?xml version="1.0" standalone="no"?>
+<?xml-stylesheet href="light.css" type="text/css"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1000 1000">
+  <defs>
+    <filter id="white-glow" x="-150%" y="-150%" width="300%" height="300%">
+      <feFlood result="flood" flood-color="#ffffff" flood-opacity="0.15"></feFlood>
+      <feComposite in="flood" result="mask" in2="SourceGraphic" operator="in"></feComposite>
+      <feMorphology in="mask" result="dilated" operator="dilate" radius="5"></feMorphology>
+      <feGaussianBlur in="dilated" result="blurred" stdDeviation="5"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blurred"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+
+    <filter id="black-glow" x="-1000%" y="-1000%" width="2000%" height="2000%">
+      <feFlood result="flood" flood-color="#000000" flood-opacity="0.15"></feFlood>
+      <feComposite in="flood" result="mask" in2="SourceGraphic" operator="in"></feComposite>
+      <feMorphology in="mask" result="dilated" operator="dilate" radius="4"></feMorphology>
+      <feGaussianBlur in="dilated" result="blurred" stdDeviation="5"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blurred"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+
+    <marker id="transitionEndCircle" viewBox="0 -5 10 10" refX="31" refY="0" markerWidth="7" markerHeight="7" orient="auto" class="marker">
+      <path d="M0,-4L10,0L0,4"></path>
+    </marker>
+    <marker id="transitionEndRect" viewBox="0 -5 10 10" refX="10" refY="0" markerWidth="7" markerHeight="7" orient="auto" class="marker">
+      <path d="M0,-4L10,0L0,4"></path>
+    </marker>
+  </defs>
+
+<g transform="translate(85.99001136269578,72.76696992678006) scale(1.1172707819045224)"><g><line class="transition" marker-end="url(#transitionEndCircle)" x1="100" y1="260" x2="200" y2="260"></line><line class="transition" marker-end="url(#transitionEndCircle)" x1="200" y1="260" x2="200" y2="140"></line><line class="transition" marker-end="url(#transitionEndCircle)" x1="200" y1="140" x2="320" y2="140"></line><line class="transition" marker-end="url(#transitionEndCircle)" x1="320" y1="140" x2="320" y2="260"></line><line class="transition" marker-end="url(#transitionEndCircle)" x1="320" y1="260" x2="200" y2="260"></line><line class="transition" marker-end="url(#transitionEndCircle)" x1="320" y1="260" x2="420" y2="260"></line><line class="transition" marker-end="url(#transitionEndCircle)" x1="420" y1="260" x2="520" y2="260"></line></g><g><circle r="30" class="state START" transform="translate(100,260)"><title>Rule start
+The entry node of a rule.</title></circle><circle r="30" class="state STOP" transform="translate(520,260)"><title>Rule stop
+The exit state of a rule.</title></circle><circle r="30" class="state BASIC" transform="translate(200,140)"><title>Basic state</title></circle><circle r="30" class="state PBSTART" transform="translate(200,260)"><title>Plus block start state
+Start of the actual block in a (A|b|...)+ loop.</title></circle><circle r="30" class="state BEND" transform="translate(320,140)"><title>Block end
+Terminal node of a simple (A|b|...) block.</title></circle><circle r="30" class="state PLBACK" transform="translate(320,260)"><title>Plus loop back
+The loop back state from the inner block to the plus block start state.</title></circle><circle r="30" class="state LEND" transform="translate(420,260)"><title>Loop end
+Marks the end of a * or + loop.</title></circle></g><g><text x="0" y="0" class="stateLabel" transform="translate(100,260)">0</text><text x="0" y="0" class="stateLabel" transform="translate(520,260)">1</text><text x="0" y="0" class="stateLabel" transform="translate(200,140)">4</text><text x="0" y="0" class="stateLabel" transform="translate(200,260)">5</text><text x="0" y="0" class="stateLabel" transform="translate(320,140)">6</text><text x="0" y="0" class="stateLabel" transform="translate(320,260)">7</text><text x="0" y="0" class="stateLabel" transform="translate(420,260)">8</text></g><g><text x="0" y="13" class="stateTypeLabel" transform="translate(100,260)">START</text><text x="0" y="13" class="stateTypeLabel" transform="translate(520,260)">STOP</text><text x="0" y="13" class="stateTypeLabel" transform="translate(200,140)">BASIC</text><text x="0" y="13" class="stateTypeLabel" transform="translate(200,260)">PBSTART</text><text x="0" y="13" class="stateTypeLabel" transform="translate(320,140)">BEND</text><text x="0" y="13" class="stateTypeLabel" transform="translate(320,260)">PLBACK</text><text x="0" y="13" class="stateTypeLabel" transform="translate(420,260)">LEND</text></g><g><text x="0" y="0" class="linkLabel" transform="translate(150,260) rotate(0) translate(0, 0)"><tspan x="0" y="1.1em" dy="0em">ε</tspan></text><text x="0" y="0" class="linkLabel" transform="translate(200,200) rotate(0) translate(10, -10)"><tspan x="0" y="1.1em" dy="0em">ε</tspan></text><text x="0" y="0" class="linkLabel" transform="translate(260,140) rotate(0) translate(0, 0)"><tspan x="0" y="1.1em" dy="0em">'[0-9]'</tspan></text><text x="0" y="0" class="linkLabel" transform="translate(320,200) rotate(0) translate(10, -10)"><tspan x="0" y="1.1em" dy="0em">ε</tspan></text><text x="0" y="0" class="linkLabel" transform="translate(260,260) rotate(360) translate(10, 0)"><tspan x="0" y="1.1em" dy="0em">ε</tspan></text><text x="0" y="0" class="linkLabel" transform="translate(370,260) rotate(0) translate(0, 0)"><tspan x="0" y="1.1em" dy="0em">ε</tspan></text><text x="0" y="0" class="linkLabel" transform="translate(470,260) rotate(0) translate(0, 0)"><tspan x="0" y="1.1em" dy="0em">ε</tspan></text></g></g></svg>
